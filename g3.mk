@@ -242,4 +242,5 @@ PRODUCT_PACKAGES += \
 
 # additional features
 PRODUCT_PACKAGES += \
-    Recorder
+    Recorder \
+    SnapdragonCamera
