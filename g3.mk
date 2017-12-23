@@ -122,6 +122,11 @@ PRODUCT_PACKAGES += \
     ebtables \
     ethertypes
 
+# Gatekeeper HAL
+PRODUCT_PACKAGES += \
+    android.hardware.gatekeeper@1.0-impl \
+    android.hardware.gatekeeper@1.0-service
+
 # IRDA
 PRODUCT_PACKAGES += \
     android.hardware.ir@1.0-impl
@@ -136,7 +141,8 @@ PRODUCT_PACKAGES += \
 
 # Keymaster
 PRODUCT_PACKAGES += \
-    android.hardware.keymaster@3.0-impl
+    android.hardware.keymaster@3.0-impl \
+    android.hardware.keymaster@3.0-service
 
 # Lights
 PRODUCT_PACKAGES += \
@@ -219,7 +225,7 @@ PRODUCT_COPY_FILES += \
 
 # USB
 PRODUCT_PACKAGES += \
-    android.hardware.usb@1.0-service
+    android.hardware.usb@1.0-service.msm8974
 
 # Vibrator
 PRODUCT_PACKAGES += \
@@ -234,8 +240,6 @@ PRODUCT_PACKAGES += \
     wpa_supplicant \
     wpa_supplicant.conf
 
-# crDroid addons
+# additional features
 PRODUCT_PACKAGES += \
-    crDroidMusic \
-    crDroidFileManager \
     Recorder
