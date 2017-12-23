@@ -122,6 +122,11 @@ PRODUCT_PACKAGES += \
     ebtables \
     ethertypes
 
+# Gatekeeper HAL
+PRODUCT_PACKAGES += \
+    android.hardware.gatekeeper@1.0-impl \
+    android.hardware.gatekeeper@1.0-service
+
 # IRDA
 PRODUCT_PACKAGES += \
     android.hardware.ir@1.0-impl
@@ -136,7 +141,8 @@ PRODUCT_PACKAGES += \
 
 # Keymaster
 PRODUCT_PACKAGES += \
-    android.hardware.keymaster@3.0-impl
+    android.hardware.keymaster@3.0-impl \
+    android.hardware.keymaster@3.0-service
 
 # Lights
 PRODUCT_PACKAGES += \
@@ -226,16 +232,27 @@ PRODUCT_PACKAGES += \
     android.hardware.vibrator@1.0-impl
 
 # Wifi
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/wcnss/WCNSS_cfg.dat:system/etc/firmware/wlan/prima/WCNSS_cfg.dat \
+    $(LOCAL_PATH)/wcnss/WCNSS_qcom_cfg.ini:system/etc/wifi/WCNSS_qcom_cfg.ini \
+    $(LOCAL_PATH)/wcnss/WCNSS_qcom_wlan_nv.bin:system/etc/firmware/wlan/prima/WCNSS_qcom_wlan_nv.bin
+
 PRODUCT_PACKAGES += \
     android.hardware.wifi@1.0-service \
     wificond \
     hostapd \
-    libwpa_client \
+    wcnss_service \
     wpa_supplicant \
-    wpa_supplicant.conf
+    android.hardware.tetheroffload@1.0-impl
 
-# crDroid addons
 PRODUCT_PACKAGES += \
-    crDroidMusic \
-    crDroidFileManager \
+    hostapd_default.conf \
+    hostapd.accept \
+    hostapd.deny \
+    wpa_supplicant.conf \
+    wpa_supplicant_overlay.conf \
+    p2p_supplicant_overlay.conf
+
+# additional features
+PRODUCT_PACKAGES += \
     Recorder
