@@ -170,6 +170,7 @@ PRODUCT_COPY_FILES += \
 # NFC
 PRODUCT_PACKAGES += \
     android.hardware.nfc@1.0-impl \
+    android.hardware.nfc@1.0-service \
     com.android.nfc_extras \
     Tag
 
@@ -225,7 +226,7 @@ PRODUCT_COPY_FILES += \
 
 # USB
 PRODUCT_PACKAGES += \
-    android.hardware.usb@1.0-service.msm8974
+    android.hardware.usb@1.0-service
 
 # Vibrator
 PRODUCT_PACKAGES += \
@@ -244,3 +245,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     Recorder \
     SnapdragonCamera
+
+# Oneplus features
+PRODUCT_PACKAGES += \
+    OneplusDoze \
+    OneplusPocketMode
